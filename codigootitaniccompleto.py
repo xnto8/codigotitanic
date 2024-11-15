@@ -22,7 +22,7 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     x_axis=st.selectbox("selecciona el eje x", df.select_dtypes(include= "number").columns)
     y_axis=st.selectbox("selecciona el eje y", df.select_dtypes(include= "number").columns)
-    chart = alt.Chart(df).mark_cicle(size=60).encode(
+    chart = alt.Chart(df).mark_cicle(size=60).encode()
         x=x_axis, y=y_axis,tooltip=[x_axis, y_axis].interactive()
     st.altair_chart(chart, use_container_width=True)
 
