@@ -25,7 +25,6 @@ if uploaded_file is not None:
     chart = alt.Chart(df).mark_cicle(size=60).encode(
         x=x_axis,
         y=y_axis,
-        tooltip=[x_axis, y_axis]
-    )interactive()
+        tooltip=[x_axis, y_axis].interactive()
     st.altair_chart(chart, use_container_width=True)
 
