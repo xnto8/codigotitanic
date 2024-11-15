@@ -20,11 +20,11 @@ st.pyplot(fig)
 import altair as alt
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-    x_axis=st.selectbox("selecciona el eje x", df.select_dtypes(include= "number").columns)
-    y_axis=st.selectbox("selecciona el eje y", df.select_dtypes(include= "number").columns)
+    x_axis=st.selectbox("selecciona el eje X", df.select_dtypes(include= "number").columns)
+    y_axis=st.selectbox("selecciona el eje Y", df.select_dtypes(include= "number").columns)
     chart = alt.Chart(df).mark_circle(size=60).encode(
-        x= x_axis,
-        y= y_axis,
+        X= x_axis,
+        Y= y_axis,
         tooltip=[x_axis, y_axis].interactive()
     st.altair_chart(chart, use_container_width=True))
 
